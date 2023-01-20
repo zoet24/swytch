@@ -83,7 +83,21 @@ define( 'WP_DEBUG', false );
 
 /* Add any custom values between this line and the "stop editing" line. */
 
+// define('ROOT_DIR', dirname(__DIR__));
 
+//  require_once dirname(__DIR__) . '/vendor/autoload.php';
+
+//  $dotenv = Dotenv\Dotenv::create(ROOT_DIR);
+//  if (file_exists(ROOT_DIR . '/.env')) {
+// 	 $dotenv->load();
+//  }
+
+require_once 'vendor/autoload.php';
+$dotenv = Dotenv\Dotenv::createImmutable(__DIR__);
+$dotenv->load();
+
+define('API_USER', getenv('API_USER'));
+define('API_KEY', getenv('API_KEY'));
 
 /* That's all, stop editing! Happy publishing. */
 

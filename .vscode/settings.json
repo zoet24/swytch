@@ -1,0 +1,36 @@
+{
+	// Make VS Code format files when you save them automatically
+	"editor.formatOnSave": true,
+
+	// Set the default code formatter
+	"editor.defaultFormatter": "esbenp.prettier-vscode",
+	"editor.detectIndentation": true,
+	"files.trimTrailingWhitespace": true,
+	"[javascript]": { "editor.defaultFormatter": "esbenp.prettier-vscode" },
+	"[php]": { "editor.defaultFormatter": "junstyle.php-cs-fixer" },
+
+	// Set up some defaults
+	"prettier.tabWidth": 2,
+	"prettier.useTabs": true,
+	"prettier.singleQuote": true,
+
+	"files.associations": {
+		"*.js": "javascript",
+		"*.njk": "twig",
+		"*.twig": "twig"
+	},
+
+	"stylelint.enable": true,
+	"css.validate": false,
+	"scss.validate": false,
+	"eslint.format.enable": true,
+
+	// Twig
+	"twig-language-2.indentStyle": "tab",
+	"php-cs-fixer.onsave": true,
+	"php-cs-fixer.formatHtml": true,
+	"[twig]": {
+		"editor.defaultFormatter": "esbenp.prettier-vscode"
+	},
+	"cSpell.words": ["mapboxgl"]
+}
