@@ -9,10 +9,8 @@
 /wp-content/themes/twentytwentytwo
 /wp-content/themes/twentytwentythree
 
-/wp-content/themes/swytch/assets
-/wp-content/themes/swytch/parts
-/wp-content/themes/swytch/styles
-/wp-content/themes/swytch/templates
+/wp-content/themes/swytch/bin
+/wp-content/themes/swytch/vendor
 
 /index.php
 /license.txt
@@ -30,3 +28,7 @@
 /wp-signup.php
 /wp-trackback.php
 /xmlrpc.php
+
+/vendor
+
+.DS_Store
