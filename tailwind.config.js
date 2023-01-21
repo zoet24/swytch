@@ -4,7 +4,9 @@ module.exports = {
 	theme: {
 		colors: {
 			content: '#0D1529',
+			green: '#078080',
 			'grey-light': '#F8F8F8',
+			'grey-dark': '#A8A8A8',
 		},
 		extend: {
 			fontFamily: {
@@ -26,11 +28,24 @@ module.exports = {
 						letterSpacing: '0.02em',
 					},
 				],
+				h3: [
+					'20px',
+					{
+						lineHeight: '100%',
+						fontWeight: '700',
+					},
+				],
 				index: [
 					'40px',
 					{
 						lineHeight: '100%',
 						fontWeight: '700',
+					},
+				],
+				body: [
+					'16px',
+					{
+						fontWeight: '400',
 					},
 				],
 			},

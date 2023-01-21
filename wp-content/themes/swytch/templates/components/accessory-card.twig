@@ -1,17 +1,20 @@
 <div class="bg-grey-light px-[34px] py-[19px] w-full">
     <div class="flex flex-col space-y-4">
         <span class="text-index">{{ loop.index }}</span>
-        <div class="flex justify-between">
+        <div class="flex justify-between items-center">
             <div>
-                <h3>{{ accessory.name }}</h3>
-                <span>{{ accessory.sold }} sold</span>
+                <h3 class="text-h3 mb-[5px]">{{ accessory.name }}</h3>
+                <span class="text-green">{{ accessory.sold }} sold</span>
             </div>
             <div>
-                <span>£{{ accessory.price.regular }}</span>
-                <span>£{{ accessory.price.sale }}</span>
+                <span class="text-grey-dark font-bold mr-1 leading-[18px] line-through">£{{ accessory.price.regular }}</span>
+                <span class="font-bold text-[24px] leading-[28px]">£{{ accessory.price.sale }}</span>
             </div>
         </div>
-        <div>
+        <div class="flex items-center p-2 border rounded-[3.8389px] w-fit">
+            <div class="h-5 w-5 rounded-full border-2 flex justify-center items-center mr-2">
+                {% include "./icons/info.twig" %}
+            </div>
             More info
         </div>
     </div>
