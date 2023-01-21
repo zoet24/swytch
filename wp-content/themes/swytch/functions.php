@@ -19,6 +19,7 @@ if ( file_exists( $composer_autoload ) ) {
 	$timber = new Timber\Timber();
 }
 
+// Load compiled Tailwind stylesheet
 wp_enqueue_style( 'swytch-styles', get_template_directory_uri() . '/dist/style.css' );
 
 /**

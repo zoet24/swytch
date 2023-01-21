@@ -1,4 +1,18 @@
-{# Accessory card #}
-<div>
-    Accessory card
+<div class="bg-grey-light px-[34px] py-[19px] w-full">
+    <div class="flex flex-col space-y-4">
+        <span class="text-index">{{ loop.index }}</span>
+        <div class="flex justify-between">
+            <div>
+                <h3>{{ accessory.name }}</h3>
+                <span>{{ accessory.sold }} sold</span>
+            </div>
+            <div>
+                <span>£{{ accessory.price.regular }}</span>
+                <span>£{{ accessory.price.sale }}</span>
+            </div>
+        </div>
+        <div>
+            More info
+        </div>
+    </div>
 </div>

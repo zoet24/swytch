@@ -6,7 +6,7 @@
 
 $context = Timber::context();
 
-function get_accessories() {
+function get_accessories_api() {
     $api_user = API_USER;
     $api_key = API_KEY;
     $credentials = base64_encode($api_user.':'.$api_key);
@@ -23,6 +23,23 @@ function get_accessories() {
     return json_decode($data);
 }
 
-$accessories = get_accessories();
+$accessories_data = get_accessories_api()->data;
+$accessories = [];
+
+// var_dump($accessories_data);
+
+foreach ($accessories_data as $accessory_data) {
+    // var_dump($accessory_data->price->EUR);
+
+    $accessory = [
+        'name' => $accessory_data->name,
+        'sold' => $accessory_data->sold,
+        'price' => $accessory_data->price->GBP
+    ];
+    array_push($accessories, $accessory);
+}
+
+$context["accessories"] = array_slice($accessories, 0, 50);
+// var_dump($context["accessories"]);
 
 Timber::render( 'popular-accessories.twig', $context );
