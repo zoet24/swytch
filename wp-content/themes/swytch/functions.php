@@ -19,6 +19,8 @@ if ( file_exists( $composer_autoload ) ) {
 	$timber = new Timber\Timber();
 }
 
+wp_enqueue_style( 'swytch-styles', get_template_directory_uri() . '/dist/style.css' );
+
 /**
  * This ensures that Timber is loaded and available as a PHP class.
  * If not, it gives an error message to help direct developers on where to activate
