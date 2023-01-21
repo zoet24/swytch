@@ -6,6 +6,7 @@
 
 $context = Timber::context();
 
+// Query Swytch API with variables from .env
 function get_accessories_api() {
     $api_user = API_USER;
     $api_key = API_KEY;
@@ -23,14 +24,13 @@ function get_accessories_api() {
     return json_decode($data);
 }
 
-$accessories_data = get_accessories_api()->data;
+// Store first 50 popular accessories
+$accessories_data = array_slice((get_accessories_api()->data), 0, 50);
+
+// Cycle through 50 accessories and add data to accessories array
 $accessories = [];
 
-// var_dump($accessories_data);
-
 foreach ($accessories_data as $accessory_data) {
-    // var_dump($accessory_data->price->EUR);
-
     $accessory = [
         'name' => $accessory_data->name,
         'sold' => $accessory_data->sold,
@@ -39,7 +39,6 @@ foreach ($accessories_data as $accessory_data) {
     array_push($accessories, $accessory);
 }
 
-$context["accessories"] = array_slice($accessories, 0, 50);
-// var_dump($context["accessories"]);
+$context["accessories"] = $accessories;
 
 Timber::render( 'popular-accessories.twig', $context );
