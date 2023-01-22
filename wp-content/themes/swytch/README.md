@@ -32,6 +32,9 @@ Install this theme as you would any other, and be sure the Timber plugin is acti
 
 ## Future Work
 
+- pagination for product cards
+- sorting bar
+
 ## Credits
 
 Timber theme
