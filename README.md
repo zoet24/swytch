@@ -1,4 +1,8 @@
-# swytch
+# Swytch - Fullstack WordPress developer task
+
+Custom WordPress theme that displays the 50 most popular accessories from the Swytch Dev API. Design based on [Figma wireframes] (https://www.figma.com/file/q0M01nE6AGo7aIB2OaVfyn/Full-Stack-WordPress-Developer---task-design---Zoe?node-id=14%3A481&t=josd0ns2wQJop1Zs-0) provided by Swytch.
+
+## Initial set-up
 
 add .env and these to wp_config.php under
 
@@ -14,3 +18,7 @@ npm run build
 
 cd into theme folder
 composer install
+
+## Future work
+
+- Add extra templates

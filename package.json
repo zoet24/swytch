@@ -1,5 +1,6 @@
 {
 	"scripts": {
+		"build": "npx tailwindcss -i ./wp-content/themes/swytch/src/assets/css/style.scss -o ./wp-content/themes/swytch/dist/style.css",
 		"dev": "npx tailwindcss -i ./wp-content/themes/swytch/src/assets/css/style.scss -o ./wp-content/themes/swytch/dist/style.css --watch"
 	},
 	"devDependencies": {
