@@ -1,18 +1,6 @@
+# WP Installation
 /wp-admin
 /wp-includes
-
-/wp-content/languages
-/wp-content/plugins
-/wp-content/upgrade
-/wp-content/uploads
-/wp-content/themes/twentytwentyone
-/wp-content/themes/twentytwentytwo
-/wp-content/themes/twentytwentythree
-
-/wp-content/themes/swytch/bin
-/wp-content/themes/swytch/dist
-/wp-content/themes/swytch/vendor
-
 /index.php
 /license.txt
 /readme.html
@@ -30,9 +18,20 @@
 /wp-trackback.php
 /xmlrpc.php
 
+# WP Installation - Content
+/wp-content/languages
+/wp-content/plugins
+/wp-content/upgrade
+/wp-content/uploads
+
+# WP Installation - Theme
+/wp-content/themes/swytch/bin
+/wp-content/themes/swytch/dist
+/wp-content/themes/swytch/vendor
+
+# General
 /vendor
 /node_modules
-
 .DS_Store
-
 .env
+.htaccess
