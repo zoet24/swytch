@@ -34,6 +34,7 @@ Install this theme as you would any other, and be sure the Timber plugin is acti
 
 - pagination for product cards
 - sorting bar
+- add lazy loading
 
 ## Credits
 
