@@ -2,13 +2,21 @@
     <div class="flex flex-wrap space-y-4 sm:justify-between sm:items-center sm:space-y-0">
         <span class="text-index w-full sm:w-[50px]">{{ loop.index }}</span>
         <div class="w-1/2 sm:w-fit">
-            <h3 class="text-h3 mb-[5px]">{{ accessory.name }}</h3>
-            <span class="text-green">{{ accessory.sold }} sold</span>
+            {% if accessory.name %}
+                <h3 class="text-h3 mb-[5px]">{{ accessory.name }}</h3>
+            {% endif %}
+            {% if accessory.sold %}
+                <span class="text-green">{{ accessory.sold }} sold</span>
+            {% endif %}
         </div>
         <div class="w-1/2 flex justify-end items-center sm:w-fit">
             <div>
-                <span class="text-grey-dark font-bold mr-1 leading-[18px] line-through">£{{ accessory.price.regular }}</span>
-                <span class="font-bold text-[24px] leading-[28px]">£{{ accessory.price.sale }}</span>
+                {% if accessory.price.regular %}
+                    <span class="text-grey-dark font-bold mr-1 leading-[18px] line-through">£{{ accessory.price.regular }}</span>
+                {% endif %}
+                {% if accessory.price.sale %}
+                    <span class="font-bold text-[24px] leading-[28px]">£{{ accessory.price.sale }}</span>
+                {% endif %}
             </div>
         </div>
         <div class="w-full sm:w-fit">
