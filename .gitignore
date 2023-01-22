@@ -7,6 +7,7 @@
 /wp-activate.php
 /wp-blog-header.php
 /wp-comments-post.php
+/wp-config.php
 /wp-config-sample.php
 /wp-cron.php
 /wp-links-opml.php
@@ -28,6 +29,7 @@
 /wp-content/themes/swytch/bin
 /wp-content/themes/swytch/dist
 /wp-content/themes/swytch/vendor
+/wp-content/themes/swytch/composer.lock
 
 # General
 /vendor
@@ -35,3 +37,4 @@
 .DS_Store
 .env
 .htaccess
+package-lock.json
