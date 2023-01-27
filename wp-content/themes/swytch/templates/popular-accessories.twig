@@ -5,24 +5,25 @@
     {% include "./components/hero.twig" %}
 
     {# Popular accessory listing #}
-    <section class="px-5 lg:px-0 md:max-w-[1009px] mx-auto mb-[61px] sm:mb-[70px]">
-        <h2 class="text-h2 text-center mb-14">Our most popular accessories</h2>
-        <form id="sort-form">
-            <label for="sort">Sort by:</label>
-            <select 
-                id="sort" 
-                name="sort"
-                onchange="document.getElementById('sort-form').submit();"
-                class="flex items-center p-2 border rounded-[3.8389px] w-fit cursor-pointer focus:border-2 focus:border-green focus-visible:outline-none">
-                <option value="name_asc" {% if sort == 'name_asc' %}selected{% endif %}>Name (A to Z)</option>
-                <option value="name_desc" {% if sort == 'name_desc' %}selected{% endif %}>Name (Z to A)</option>
-                <option value="sold_desc" {% if sort == 'sold_desc' %}selected{% endif %}>Most Sold</option>
-                <option value="disc_desc" {% if sort == 'disc_desc' %}selected{% endif %}>Biggest Discount</option>
-            </select>
-            {# <input class="flex items-center p-2 border rounded-[3.8389px] w-fit cursor-pointer focus:border-2 focus:border-green" type="submit" value="Sort"> #}
-        </form>
+    <section class="md:max-w-[1009px] mx-auto mb-[61px] sm:mb-[70px]">
+        <div class="sticky top-0 bg-white/90 p-3 mb-12">
+            <h2 class="text-h2 text-center mb-3">Our most popular accessories</h2>
+            <form id="sort-form" class="flex items-center justify-center">
+                <label for="sort" class="mr-3">Sort by:</label>
+                <select 
+                    id="sort" 
+                    name="sort"
+                    onchange="document.getElementById('sort-form').submit();"
+                    class="flex items-center p-2 border rounded-[3.8389px] w-fit cursor-pointer focus:border-2 focus:border-green focus-visible:outline-none">
+                    <option value="name_asc" {% if sort == 'name_asc' %}selected{% endif %}>Name (A to Z)</option>
+                    <option value="name_desc" {% if sort == 'name_desc' %}selected{% endif %}>Name (Z to A)</option>
+                    <option value="sold_desc" {% if sort == 'sold_desc' %}selected{% endif %}>Most Sold</option>
+                    <option value="disc_desc" {% if sort == 'disc_desc' %}selected{% endif %}>Biggest Discount</option>
+                </select>
+            </form>
+        </div>
         {% if accessories %}
-            <div class="space-y-[35px]">
+            <div class="space-y-[35px] px-5 lg:px-0">
                 {% for accessory in accessories %}
                     {% include "./components/accessory-card.twig" %}
                 {% endfor %}
