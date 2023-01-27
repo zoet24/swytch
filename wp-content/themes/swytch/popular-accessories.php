@@ -50,17 +50,9 @@ if ($sort == 'name_asc') {
     usort($accessories, function ($a, $b) {
         return strcmp($b['name'], $a['name']);
     });
-} elseif ($sort == 'sold_asc') {
-    usort($accessories, function ($a, $b) {
-        return $a['sold'] - $b['sold'];
-    });
 } elseif ($sort == 'sold_desc') {
     usort($accessories, function ($a, $b) {
         return $b['sold'] - $a['sold'];
-    });
-} elseif ($sort == 'disc_asc') {
-    usort($accessories, function ($a, $b) {
-        return $a['disc'] - $b['disc'];
     });
 } elseif ($sort == 'disc_desc') {
     usort($accessories, function ($a, $b) {
