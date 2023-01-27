@@ -7,6 +7,18 @@
     {# Popular accessory listing #}
     <section class="px-5 lg:px-0 md:max-w-[1009px] mx-auto mb-[61px] sm:mb-[70px]">
         <h2 class="text-h2 text-center mb-14">Our most popular accessories</h2>
+        <form>
+            <label for="sort">Sort by:</label>
+            <select id="sort" name="sort">
+                <option value="name_asc" {% if sort == 'name_asc' %}selected{% endif %}>Name (Ascending)</option>
+                <option value="name_desc" {% if sort == 'name_desc' %}selected{% endif %}>Name (Descending)</option>
+                <option value="sold_asc" {% if sort == 'sold_asc' %}selected{% endif %}>Sold (Ascending)</option>
+                <option value="sold_desc" {% if sort == 'sold_desc' %}selected{% endif %}>Sold (Descending)</option>
+                <option value="disc_asc" {% if sort == 'disc_asc' %}selected{% endif %}>Discount (Ascending)</option>
+                <option value="disc_desc" {% if sort == 'disc_desc' %}selected{% endif %}>Discount (Descending)</option>
+            </select>
+            <input type="submit" value="Sort">
+        </form>
         {% if accessories %}
             <div class="space-y-[35px]">
                 {% for accessory in accessories %}

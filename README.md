@@ -28,6 +28,7 @@ In the future I would like to add the following features to this theme:
 
 - The accessories are currently ordered by the "sold" value. I would like to add a dropdown menu with different options for sorting the accessories (ie. ascending/descending name or price, biggest discount).
 - The Swytch dev API provides the "price" of each accessory in GBP, EUR and USD and the accessory cards currently only display the GBP value. I would like to add a currency toggle above the accessory cards grid that could be used to display the different currency values.
+- The accessories are currently presented as one long list. I would like to implement pagination to separate the accessories on to 3 or 4 separate pages.
 - The content of the hero block is currently hardcoded. I would like use ACF to add inputs for the heading, text content, displayed image on mobile and displayed image on desktop to give the WordPress user the ability to easily change the content.
 
 ## Credits
