@@ -15,10 +15,10 @@
                     name="sort"
                     onchange="document.getElementById('sort-form').submit();"
                     class="flex items-center p-2 border rounded-[3.8389px] w-fit cursor-pointer focus:border-2 focus:border-green focus-visible:outline-none">
-                    <option value="name_asc" {% if sort == 'name_asc' %}selected{% endif %}>Name (A to Z)</option>
-                    <option value="name_desc" {% if sort == 'name_desc' %}selected{% endif %}>Name (Z to A)</option>
                     <option value="sold_desc" {% if sort == 'sold_desc' %}selected{% endif %}>Most Sold</option>
                     <option value="disc_desc" {% if sort == 'disc_desc' %}selected{% endif %}>Biggest Discount</option>
+                    <option value="name_asc" {% if sort == 'name_asc' %}selected{% endif %}>Name (A to Z)</option>
+                    <option value="name_desc" {% if sort == 'name_desc' %}selected{% endif %}>Name (Z to A)</option>
                 </select>
             </form>
         </div>

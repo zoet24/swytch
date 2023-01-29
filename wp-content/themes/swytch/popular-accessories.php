@@ -41,6 +41,11 @@ foreach ($accessories_data as $accessory_data) {
     array_push($accessories, $accessory);
 }
 
+// Set sort by popularity as default
+usort($accessories, function ($a, $b) {
+    return $b['sold'] - $a['sold'];
+});
+
 $sort = $_GET['sort'];
 if ($sort == 'name_asc') {
     usort($accessories, function ($a, $b) {
