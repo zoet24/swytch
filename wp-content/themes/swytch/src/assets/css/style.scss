@@ -8,3 +8,15 @@
 		transform: translate(0%, -50%);
 	}
 }
+
+.icon {
+	@apply h-10 w-10 flex items-center justify-center rounded-full text-h3 bg-content border-content border-2 text-grey-light cursor-pointer;
+
+	transition: .3s all ease-in-out;
+}
+
+.icon:hover {
+	@apply bg-grey-light text-content;
+
+	transform: scale(1.05);
+}

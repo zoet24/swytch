@@ -34,3 +34,6 @@ In the future I would like to add the following features to this theme:
 ## Credits
 
 I used the starter Timber theme written by jarednova and featured on [Via Studio](https://via.studio/journal/building-a-wordpress-theme-with-timber) as a basis for this project.
+
+## Useful articles
+- [Setting up FontAwesome with Wordpress](https://fontawesome.com/v5/docs/web/use-with/wordpress/install-manually)
