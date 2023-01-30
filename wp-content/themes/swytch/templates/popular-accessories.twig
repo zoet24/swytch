@@ -14,15 +14,15 @@
                     <label for="currency" class="mr-3">Currency:</label>
                     <div class="flex space-x-1">
                         <label for="GBP">
-                            <input type="radio" id="GBP" name="currency" value="GBP" onchange="updateQueryParams(event)" />
+                            <input type="radio" {% if (currency == 'GBP') or (currency == null) %}checked{% endif %} id="GBP" name="currency" value="GBP" onchange="updateQueryParams(event)" />
                             <i class="fa-solid fa-sterling-sign icon"></i>
                         </label>
                         <label for="EUR">
-                            <input type="radio" id="EUR" name="currency" value="EUR" onchange="updateQueryParams(event)" />
+                            <input type="radio" {% if (currency == 'EUR') %}checked{% endif %} id="EUR" name="currency" value="EUR" onchange="updateQueryParams(event)" />
                             <i class="fa-solid fa-euro-sign icon"></i>
                         </label>
                         <label for="USD">
-                            <input type="radio" id="USD" name="currency" value="USD" onchange="updateQueryParams(event)" />
+                            <input type="radio" {% if (currency == 'USD') %}checked{% endif %} id="USD" name="currency" value="USD" onchange="updateQueryParams(event)" />
                             <i class="fa-solid fa-dollar-sign icon"></i>
                         </label>
                     </div>
