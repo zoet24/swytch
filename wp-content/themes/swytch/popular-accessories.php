@@ -25,22 +25,52 @@ function get_accessories_api() {
 }
 
 $accessories_data = get_accessories_api()->data;
-// var_dump($accessories_data);
 
 // Add name, sold and price (GBP) of each accessory to accessories array
 $accessories = [];
 
+// Get query params
+$currency = $_GET['currency'];
+$sort = $_GET['sort'];
+
 foreach ($accessories_data as $accessory_data) {
-    $discount = [
-        'EUR' => ($accessory_data->price->EUR->regular) - ($accessory_data->price->EUR->sale),
-        'GBP' => ($accessory_data->price->GBP->regular) - ($accessory_data->price->GBP->sale),
-        'USD' => ($accessory_data->price->USD->regular) - ($accessory_data->price->USD->sale)
+    // Set default price as GBP
+    $price = [
+        'regular' => ($accessory_data->price->GBP->regular),
+        'sale' => ($accessory_data->price->GBP->sale),
     ];
+
+    // Overwrite with EUR/USD depending on query parameters
+    if ($currency == "EUR") {
+        $price = [
+            'regular' => ($accessory_data->price->EUR->regular),
+            'sale' => ($accessory_data->price->EUR->sale),
+        ];
+    }
+
+    if ($currency == "USD") {
+        $price = [
+            'regular' => ($accessory_data->price->USD->regular),
+            'sale' => ($accessory_data->price->USD->sale),
+        ];
+    }
+
+    // Set default discount as GBP
+    $discount = ($accessory_data->price->GBP->regular) - ($accessory_data->price->GBP->sale);
+
+    // Overwrite with EUR/USD depending on query parameters
+    if ($currency == "EUR") {
+        $discount = ($accessory_data->price->EUR->regular) - ($accessory_data->price->EUR->sale);
+    }
+
+    if ($currency == "USD") {
+        $discount = ($accessory_data->price->USD->regular) - ($accessory_data->price->USD->sale);
+    }
 
     $accessory = [
         'name' => $accessory_data->name,
         'sold' => $accessory_data->sold,
-        'price' => $accessory_data->price->GBP,
+        'price' => $price,
         'disc' => $discount
     ];
     array_push($accessories, $accessory);
@@ -51,7 +81,6 @@ usort($accessories, function ($a, $b) {
     return $b['sold'] - $a['sold'];
 });
 
-$sort = $_GET['sort'];
 if ($sort == 'name_asc') {
     usort($accessories, function ($a, $b) {
         return strcmp($a['name'], $b['name']);
@@ -66,13 +95,14 @@ if ($sort == 'name_asc') {
     });
 } elseif ($sort == 'disc_desc') {
     usort($accessories, function ($a, $b) {
-        return $b['disc']['GBP'] - $a['disc']['GBP'];
+        return $b['disc'] - $a['disc'];
     });
 }
 
 $accessories_fifty = array_slice($accessories, 0, 50);
 
 $context["accessories"] = $accessories_fifty;
+$context['currency'] = $currency;
 $context['sort'] = $sort;
 
 Timber::render( 'popular-accessories.twig', $context );

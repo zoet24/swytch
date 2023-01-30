@@ -1,3 +1,15 @@
+{# Set default currency sign as £ #}
+{% set currencySign = "£" %}
+
+{# Overwrite with €/$ depending on query parameters #}
+{% if currency == "EUR" %}
+    {% set currencySign = "€" %}
+{% endif %}
+
+{% if currency == "USD" %}
+    {% set currencySign = "$" %}
+{% endif %}
+
 <div class="bg-grey-light px-[34px] py-[19px] w-full">
     <div class="flex flex-wrap space-y-4 sm:justify-between sm:items-center sm:space-y-0">
         <span class="text-index w-full sm:w-[50px]">{{ loop.index }}</span>
@@ -12,10 +24,10 @@
         <div class="w-1/2 flex justify-end items-center sm:w-fit">
             <div>
                 {% if accessory.price.regular %}
-                    <span class="text-grey-dark font-bold mr-1 leading-[18px] line-through">£{{ accessory.price.regular }}</span>
+                    <span class="text-grey-dark font-bold mr-1 leading-[18px] line-through">{{ currencySign }}{{ accessory.price.regular }}</span>
                 {% endif %}
                 {% if accessory.price.sale %}
-                    <span class="font-bold text-[24px] leading-[28px]">£{{ accessory.price.sale }}</span>
+                    <span class="font-bold text-[24px] leading-[28px]">{{ currencySign }}{{ accessory.price.sale }}</span>
                 {% endif %}
             </div>
         </div>
