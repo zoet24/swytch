@@ -22,6 +22,12 @@ if ( file_exists( $composer_autoload ) ) {
 // Load compiled Tailwind stylesheet
 wp_enqueue_style( 'swytch-styles', get_template_directory_uri() . '/dist/style.css' );
 
+// Load scripts
+function add_my_scripts() {
+    wp_enqueue_script( 'update-query-params', get_template_directory_uri() . '/src/assets/js/updateQueryParams.js', array(), '1.0', true );
+}
+add_action( 'wp_enqueue_scripts', 'add_my_scripts' );
+
 /**
  * Font Awesome Kit Setup
  * 

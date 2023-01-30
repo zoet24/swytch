@@ -10,30 +10,30 @@
             <h2 class="text-h2 text-center mb-3">Our most popular accessories</h2>
             <div class="flex flex-col sm:flex-row items-center justify-around max-w-xl mx-auto">
                 {# Currency toggle #}
-                <form id="currency-form" class="flex items-center justify-center mb-2 sm:mb-0">
+                <form id="currency-form" class="flex items-center justify-center mb-2 sm:mb-0" method="get">
                     <label for="currency" class="mr-3">Currency:</label>
                     <div class="flex space-x-1">
                         <label for="GBP">
-                            <input type="radio" id="GBP" name="currency" value="GBP" />
+                            <input type="radio" id="GBP" name="currency" value="GBP" onchange="updateQueryParams(event)" />
                             <i class="fa-solid fa-sterling-sign icon"></i>
                         </label>
                         <label for="EUR">
-                            <input type="radio" id="EUR" name="currency" value="EUR" />
+                            <input type="radio" id="EUR" name="currency" value="EUR" onchange="updateQueryParams(event)" />
                             <i class="fa-solid fa-euro-sign icon"></i>
                         </label>
                         <label for="USD">
-                            <input type="radio" id="USD" name="currency" value="USD" />
+                            <input type="radio" id="USD" name="currency" value="USD" onchange="updateQueryParams(event)" />
                             <i class="fa-solid fa-dollar-sign icon"></i>
                         </label>
                     </div>
                 </form>
                 {# Accesory sorting #}
-                <form id="sort-form" class="flex items-center justify-center">
+                <form id="sort-form" class="flex items-center justify-center" method="get">
                     <label for="sort" class="mr-3">Sort by:</label>
                     <select 
                         id="sort" 
                         name="sort"
-                        onchange="document.getElementById('sort-form').submit();"
+                        onchange="updateQueryParams(event)"
                         class="flex items-center p-2 border rounded-[3.8389px] w-fit cursor-pointer focus:border-2 focus:border-green focus-visible:outline-none">
                         <option value="sold_desc" {% if sort == 'sold_desc' %}selected{% endif %}>Most Sold</option>
                         <option value="disc_desc" {% if sort == 'disc_desc' %}selected{% endif %}>Biggest Discount</option>
