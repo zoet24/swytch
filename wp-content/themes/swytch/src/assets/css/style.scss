@@ -10,13 +10,17 @@
 }
 
 .icon {
-	@apply h-10 w-10 flex items-center justify-center rounded-full text-h3 bg-content border-content border-2 text-grey-light cursor-pointer;
+	@apply h-10 w-10 !flex items-center justify-center rounded-full text-h3 bg-content border-content border-2 text-grey-light cursor-pointer;
 
 	transition: .3s all ease-in-out;
 }
 
-.icon:hover {
+input[type="radio"] {
+	display: none;
+}
+
+input[type="radio"]:checked + .icon, .icon:hover, .icon:focus {
 	@apply bg-grey-light text-content;
 
-	transform: scale(1.05);
+	transform: scale(1.1);
 }

@@ -25,12 +25,17 @@ function get_accessories_api() {
 }
 
 $accessories_data = get_accessories_api()->data;
+// var_dump($accessories_data);
 
 // Add name, sold and price (GBP) of each accessory to accessories array
 $accessories = [];
 
 foreach ($accessories_data as $accessory_data) {
-    $discount = ($accessory_data->price->GBP->regular) - ($accessory_data->price->GBP->sale);
+    $discount = [
+        'EUR' => ($accessory_data->price->EUR->regular) - ($accessory_data->price->EUR->sale),
+        'GBP' => ($accessory_data->price->GBP->regular) - ($accessory_data->price->GBP->sale),
+        'USD' => ($accessory_data->price->USD->regular) - ($accessory_data->price->USD->sale)
+    ];
 
     $accessory = [
         'name' => $accessory_data->name,
@@ -61,7 +66,7 @@ if ($sort == 'name_asc') {
     });
 } elseif ($sort == 'disc_desc') {
     usort($accessories, function ($a, $b) {
-        return $b['disc'] - $a['disc'];
+        return $b['disc']['GBP'] - $a['disc']['GBP'];
     });
 }
 
